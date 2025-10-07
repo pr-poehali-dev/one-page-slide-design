@@ -127,14 +127,14 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-purple-50/30 to-pink-50/30">
+    <div className="min-h-screen bg-gradient-to-br from-white via-slate-50/50 to-blue-50/30">
       <section className="relative min-h-screen flex items-center justify-center py-24 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 animate-gradient bg-300%"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/3 to-primary/5"></div>
         
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-purple-400/20 rounded-full blur-3xl animate-pulse-slow"></div>
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/8 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-accent/8 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-slate-400/10 rounded-full blur-3xl animate-pulse-slow"></div>
         </div>
         
         <div className="container mx-auto max-w-6xl relative z-10">
@@ -143,11 +143,11 @@ const Index = () => {
               <span className="text-primary font-semibold">🚀 Стратегический консалтинг нового поколения</span>
             </div>
             <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
-              <span className="text-gradient bg-gradient-to-r from-primary via-accent to-primary bg-300% animate-gradient">
+              <span className="text-foreground">
                 Стратегический
               </span>
               <br />
-              <span className="text-foreground">менеджмент</span>
+              <span className="text-primary">менеджмент</span>
             </h1>
             <p className="text-xl md:text-2xl mb-12 text-muted-foreground max-w-3xl mx-auto font-medium">
               Трансформируем вызовы в возможности. Создаём стратегии, которые работают.
@@ -155,7 +155,7 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white text-lg px-10 py-7 h-auto glow group"
+                className="bg-primary hover:bg-primary/90 text-white text-lg px-10 py-7 h-auto shadow-lg group"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Получить консультацию
@@ -164,7 +164,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="glass text-lg px-10 py-7 h-auto border-2 hover:border-primary/50 group"
+                className="glass text-lg px-10 py-7 h-auto border-2 hover:border-primary/40 hover:bg-primary/5 group"
               >
                 Смотреть кейсы
                 <Icon name="PlayCircle" className="ml-2 group-hover:scale-110 transition-transform" size={20} />
@@ -190,11 +190,11 @@ const Index = () => {
               >
                 <div className="relative mb-4 inline-block">
                   <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full blur-xl opacity-0 group-hover:opacity-50 transition-opacity"></div>
-                  <div className="relative w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                  <div className="relative w-20 h-20 bg-primary rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-all duration-300">
                     <Icon name={stat.icon as any} size={32} className="text-white" />
                   </div>
                 </div>
-                <div className="text-5xl md:text-6xl font-bold mb-2 text-gradient bg-gradient-to-r from-primary to-accent">
+                <div className="text-5xl md:text-6xl font-bold mb-2 text-primary">
                   {stat.value}
                 </div>
                 <div className="text-muted-foreground text-sm md:text-base font-medium">
@@ -210,7 +210,7 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              Почему <span className="text-gradient">выбирают нас</span>
+              Почему <span className="text-primary">выбирают нас</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Доказанная экспертиза в стратегическом консалтинге
@@ -226,8 +226,8 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <CardContent className="p-10 text-center relative z-10">
                   <div className="relative mb-8 inline-block">
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-3xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity"></div>
-                    <div className="relative w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-3xl flex items-center justify-center transform group-hover:scale-110 group-hover:-rotate-6 transition-all duration-300">
+                    <div className="absolute inset-0 bg-primary rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
+                    <div className="relative w-20 h-20 bg-primary rounded-3xl flex items-center justify-center transform group-hover:scale-110 transition-all duration-300">
                       <Icon name={advantage.icon as any} size={36} className="text-white" />
                     </div>
                   </div>
@@ -249,7 +249,7 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              Наши <span className="text-gradient">услуги</span>
+              Наши <span className="text-primary">услуги</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Комплексные решения для развития вашего бизнеса
@@ -265,8 +265,8 @@ const Index = () => {
                 <CardContent className="p-8">
                   <div className="flex items-start gap-5">
                     <div className="relative flex-shrink-0">
-                      <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-2xl blur-lg opacity-0 group-hover:opacity-40 transition-opacity"></div>
-                      <div className="relative w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                      <div className="absolute inset-0 bg-primary rounded-2xl blur-lg opacity-0 group-hover:opacity-30 transition-opacity"></div>
+                      <div className="relative w-16 h-16 bg-primary rounded-2xl flex items-center justify-center transform group-hover:rotate-6 transition-transform duration-300">
                         <Icon name={service.icon as any} size={30} className="text-white" />
                       </div>
                     </div>
@@ -290,7 +290,7 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              Успешные <span className="text-gradient">кейсы</span>
+              Успешные <span className="text-primary">кейсы</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Реальные результаты наших клиентов
@@ -314,15 +314,15 @@ const Index = () => {
                       </h3>
                     </div>
                     <div className="relative">
-                      <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary rounded-full blur-md opacity-0 group-hover:opacity-50 transition-opacity"></div>
-                      <div className="relative w-14 h-14 bg-gradient-to-br from-accent to-primary rounded-full flex items-center justify-center">
+                      <div className="absolute inset-0 bg-accent rounded-full blur-md opacity-0 group-hover:opacity-40 transition-opacity"></div>
+                      <div className="relative w-14 h-14 bg-accent rounded-full flex items-center justify-center">
                         <Icon name="TrendingUp" size={26} className="text-white" />
                       </div>
                     </div>
                   </div>
                   <div className="mb-6">
-                    <div className="text-4xl font-bold mb-3">
-                      <span className="text-gradient">{caseItem.result}</span>
+                    <div className="text-4xl font-bold mb-3 text-primary">
+                      {caseItem.result}
                     </div>
                     <p className="text-muted-foreground leading-relaxed text-base">
                       {caseItem.description}
@@ -347,7 +347,7 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-gradient">Отзывы</span> клиентов
+              <span className="text-primary">Отзывы</span> клиентов
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Что говорят о нашей работе
@@ -372,7 +372,7 @@ const Index = () => {
                     <span className="text-4xl text-primary/20 leading-none">"</span>
                   </p>
                   <div className="flex items-center gap-4 pt-6 border-t border-border/50">
-                    <div className="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                    <div className="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
                       {testimonial.name.split(' ').map(n => n[0]).join('')}
                     </div>
                     <div>
@@ -396,7 +396,7 @@ const Index = () => {
         <div className="container mx-auto max-w-4xl relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              Свяжитесь <span className="text-gradient">с нами</span>
+              Свяжитесь <span className="text-primary">с нами</span>
             </h2>
             <p className="text-xl text-muted-foreground">
               Оставьте заявку, и мы обсудим возможности сотрудничества
