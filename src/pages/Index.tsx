@@ -103,6 +103,29 @@ const Index = () => {
     },
   ];
 
+  const stats = [
+    {
+      value: "200+",
+      label: "Реализованных проектов",
+      icon: "Briefcase",
+    },
+    {
+      value: "15",
+      label: "Лет на рынке",
+      icon: "Calendar",
+    },
+    {
+      value: "94%",
+      label: "Клиентов возвращаются",
+      icon: "ThumbsUp",
+    },
+    {
+      value: "50+",
+      label: "Экспертов в команде",
+      icon: "Users",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <section className="relative bg-gradient-to-br from-primary via-primary to-[#2C4C7E] text-white py-24 px-6 overflow-hidden">
@@ -127,6 +150,30 @@ const Index = () => {
               Получить консультацию
               <Icon name="ArrowRight" className="ml-2" size={20} />
             </Button>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-6 bg-gradient-to-r from-primary via-[#2C4C7E] to-primary text-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <div 
+                key={index}
+                className="text-center animate-fade-in"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+                  <Icon name={stat.icon as any} size={28} className="text-white" />
+                </div>
+                <div className="text-4xl md:text-5xl font-bold mb-2">
+                  {stat.value}
+                </div>
+                <div className="text-white/80 text-sm md:text-base">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
