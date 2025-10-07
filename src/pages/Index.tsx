@@ -65,6 +65,44 @@ const Index = () => {
     },
   ];
 
+  const testimonials = [
+    {
+      name: "Александр Петров",
+      position: "CEO, TechCorp",
+      text: "Благодаря новой стратегии мы увеличили выручку на 65% за год. Команда продемонстрировала глубокое понимание нашей отрасли.",
+      rating: 5,
+    },
+    {
+      name: "Мария Соколова",
+      position: "Директор по развитию, RetailGroup",
+      text: "Профессиональный подход и конкретные результаты. Оптимизация процессов позволила сократить издержки на 30%.",
+      rating: 5,
+    },
+    {
+      name: "Дмитрий Волков",
+      position: "Основатель, StartupHub",
+      text: "Получили чёткий план развития на 3 года. Особенно ценно, что консультанты учли специфику нашего стартапа.",
+      rating: 5,
+    },
+  ];
+
+  const cases = [
+    {
+      company: "Производственная компания",
+      industry: "Промышленность",
+      result: "+45% операционной прибыли",
+      description: "Реструктуризация производства и внедрение системы управления качеством",
+      metrics: ["12 месяцев", "45% рост", "8 заводов"],
+    },
+    {
+      company: "Сеть розничных магазинов",
+      industry: "Ритейл",
+      result: "Выход в топ-3 рынка",
+      description: "Разработка стратегии омниканального присутствия и digital-трансформации",
+      metrics: ["18 месяцев", "120+ точек", "3x трафик"],
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <section className="relative bg-gradient-to-br from-primary via-primary to-[#2C4C7E] text-white py-24 px-6 overflow-hidden">
@@ -149,6 +187,102 @@ const Index = () => {
                       <p className="text-muted-foreground leading-relaxed">
                         {service.description}
                       </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-6 bg-gradient-to-br from-primary/5 to-accent/5">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-foreground">
+            Кейсы
+          </h2>
+          <p className="text-center text-muted-foreground text-lg mb-16 max-w-2xl mx-auto">
+            Реальные результаты наших клиентов
+          </p>
+          <div className="grid md:grid-cols-2 gap-8">
+            {cases.map((caseItem, index) => (
+              <Card 
+                key={index}
+                className="group hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-accent/30 animate-slide-up overflow-hidden"
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
+                <CardContent className="p-8">
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <div className="text-sm text-accent font-semibold mb-1">
+                        {caseItem.industry}
+                      </div>
+                      <h3 className="text-2xl font-bold text-foreground">
+                        {caseItem.company}
+                      </h3>
+                    </div>
+                    <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
+                      <Icon name="TrendingUp" size={24} className="text-accent" />
+                    </div>
+                  </div>
+                  <div className="mb-4">
+                    <div className="text-3xl font-bold text-accent mb-2">
+                      {caseItem.result}
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {caseItem.description}
+                    </p>
+                  </div>
+                  <div className="flex gap-4 pt-4 border-t border-border">
+                    {caseItem.metrics.map((metric, i) => (
+                      <div key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Icon name="CheckCircle2" size={16} className="text-accent" />
+                        {metric}
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-6 bg-secondary/30">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-foreground">
+            Отзывы клиентов
+          </h2>
+          <p className="text-center text-muted-foreground text-lg mb-16 max-w-2xl mx-auto">
+            Что говорят о нашей работе
+          </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card 
+                key={index}
+                className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-slide-up"
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
+                <CardContent className="p-8">
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Icon key={i} name="Star" size={20} className="text-accent fill-accent" />
+                    ))}
+                  </div>
+                  <p className="text-foreground leading-relaxed mb-6 italic">
+                    "{testimonial.text}"
+                  </p>
+                  <div className="flex items-center gap-3 pt-4 border-t border-border">
+                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold">
+                      {testimonial.name.split(' ').map(n => n[0]).join('')}
+                    </div>
+                    <div>
+                      <div className="font-semibold text-foreground">
+                        {testimonial.name}
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        {testimonial.position}
+                      </div>
                     </div>
                   </div>
                 </CardContent>
